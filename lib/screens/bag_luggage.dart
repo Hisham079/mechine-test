@@ -30,7 +30,8 @@ class _luggage_detailsState extends State<luggage_details> {
                 MaterialPageRoute(
                   builder: (context) => HomeScreen(),
                 )),
-            child: Icon(color: Colors.black, Icons.arrow_back)),
+            child: Icon(color: Colors.black, Icons.arrow_back)
+            ),
           title: Padding(
           padding: const EdgeInsets.only(left: 90),
           child: Row(
