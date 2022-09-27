@@ -41,7 +41,7 @@ class _luggage_detailsState extends State<luggage_details> {
                 style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.w800,
-                    fontSize: 29),
+                    fontSize: 30),
               ),
               Text(
                 'valy',
