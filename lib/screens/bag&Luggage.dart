@@ -45,16 +45,24 @@ class _luggage_detailsState extends State<luggage_details> {
               ],
             ),
           ),
-          actions: [Icon(color: Colors.black, Icons.person)],
+          actions: [
+            Icon(
+              color: Colors.black,
+              Icons.person_outline,
+              size: 34,
+            )
+          ],
         ),
         body: SingleChildScrollView(
           child: Container(
-            color: Colors.grey,
+            color: Color.fromRGBO(240, 233, 238, 1),
             child: Row(
               children: [
+                SizedBox(
+                  width: 8,
+                ),
                 Container(
-                  color: Colors.grey,
-                  width: 200,
+                  width: 195,
                   child: Column(
                     children: [
                       GestureDetector(
@@ -127,20 +135,34 @@ class _luggage_detailsState extends State<luggage_details> {
                     ],
                   ),
                 ),
+                SizedBox(
+                  width: 8,
+                ),
                 Container(
-                  color: Colors.white,
-                  width: 200,
+                  color: Color.fromRGBO(240, 233, 238, 1),
+                  width: 192,
                   child: Column(
                     children: [
-                      Image.network(
-                          'https://m.media-amazon.com/images/I/61iR9NMcKpL._UL1280_.jpg'),
-                      Text('Panda Kid School Bag'),
-                      Text(
-                        '₹ 1290/-',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 143, 90, 10)),
+                      Container(
+                        color: Colors.white,
+                        height: 300,
+                        child: Column(
+                          children: [
+                            Image.network(
+                                'https://n3.sdlcdn.com/imgs/j/a/f/Panda-Kids-School-Bag-Soft-SDL682518892-1-c75ca.jpg'),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text('Panda Kid School Bag'),
+                            Text(
+                              '₹ 1290/-',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 143, 90, 10)),
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 10,
@@ -163,7 +185,7 @@ class _luggage_detailsState extends State<luggage_details> {
                         ),
                       ),
                       SizedBox(
-                        width: 10,
+                        height: 10,
                       ),
                       Container(
                         color: Colors.white,
@@ -177,11 +199,14 @@ class _luggage_detailsState extends State<luggage_details> {
                               style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 143, 90, 10)),
+                                  color: Color.fromARGB(255, 173, 110, 16)),
                             )
                           ],
                         ),
                       ),
+                      SizedBox(
+                        height: 60,
+                      )
                     ],
                   ),
                 ),

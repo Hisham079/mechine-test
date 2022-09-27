@@ -52,7 +52,13 @@ class _Product_screenState extends State<Product_screen> {
             ],
           ),
         ),
-        actions: [Icon(color: Colors.black, Icons.person_outline)],
+        actions: [
+          Icon(
+            color: Colors.black,
+            Icons.person_outline,
+            size: 34,
+          )
+        ],
       ),
       body: Column(
         children: [
@@ -71,72 +77,67 @@ class _Product_screenState extends State<Product_screen> {
                 return PrdctList(
                   products: productList[index],
                 );
-                
               },
             ),
           )
         ],
       ),
-      bottomNavigationBar: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 17),
-            child: Icon(Icons.favorite_border),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 12),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(7),
-                color: Color.fromARGB(255, 236, 192, 203),
-              ),
-
-              height: 40,
-              child: Row(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Color.fromARGB(255, 236, 192, 203),
-                    ),
-                    height: 60,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 9),
-                      child: Text(
-                        '   ADD TO CART   ',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(bottom: 4),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 17),
+              child: Icon(Icons.favorite_border),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 12),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(7),
+                  color: Color.fromARGB(255, 236, 192, 203),
+                ),
+                height: 40,
+                width: 348,
+                child: Row(
+                  children: [
+                    Container(
+                     // color: Color.fromARGB(255, 236, 192, 203),
+                      // decoration: BoxDecoration(
+                      //   borderRadius: BorderRadius.circular(16),
+                      //   color: Color.fromARGB(255, 236, 192, 203),
+                      // ),
+                      height: 60,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 9),
+                        child: Text(
+                          '   ADD TO CART   ',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 241, 76, 65)),
+                        ),
                       ),
                     ),
-                  ),
-                  Container(
-                    height: 60,
-                    color: Colors.red,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 9),
-                      child: Text('   AVAILABLE AT SHOPS  ',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold)),
+                    Container(
+                      height: 60,
+                      color: Colors.red,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 9),
+                        child: Text('   AVAILABLE AT SHOPS  ',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
+                      ),
                     ),
-                  )
-                ],
+                  ],
+                ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
