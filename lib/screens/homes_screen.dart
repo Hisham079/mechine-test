@@ -296,15 +296,12 @@ class _MyWidgetState extends State<HomeScreen>
           )
         ],
       ),
-      
       // bottomNavigationBar: Row(
       //   children: [
       //     Icon(
-            
       //       Icons.home,
       //       color: Colors.pink,
       //       size: 27,
-            
       //     ),
       //     Icon(
       //       Icons.favorite_outline,
