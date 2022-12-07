@@ -1,5 +1,8 @@
 import 'package:evily1/screens/bag&Luggage.dart';
+import 'package:evily1/widget/bagDetails.dart';
+import 'package:evily1/widget/bag_luggage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({
@@ -33,29 +36,29 @@ class _MyWidgetState extends State<HomeScreen>
         title: Padding(
           padding: const EdgeInsets.only(left: 90),
           child: Row(
-            children: const [
+            children: [
               Text(
                 'e',
                 style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.w800,
-                    fontSize: 29),
+                    fontSize: 29.sp),
               ),
               Text(
                 'valy',
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w800,
-                    fontSize: 29),
+                    fontSize: 29.sp),
               ),
             ],
           ),
         ),
-        actions: const [
+        actions:  [
           Icon(
             color: Colors.black,
             Icons.person_outline,
-            size: 32,
+            size: 32.sp,
           )
         ],
       ),
@@ -63,25 +66,22 @@ class _MyWidgetState extends State<HomeScreen>
         color: Color.fromARGB(255, 252, 247, 247),
         child: ListView(
           children: [
-            const SizedBox(
-              height: 12,
+            SizedBox(
+              height: 12.h,
             ),
             Container(
-              height: 59,
-              // width: 80,
+              height: 59.h,
+             // width: 250,
               decoration: BoxDecoration(
                   color: Color.fromARGB(255, 249, 241, 247),
                   borderRadius: BorderRadius.circular(7)),
               // color: Color.fromARGB(255, 210, 208, 208),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 12),
-                child: TextField(
-                  decoration: InputDecoration(
-                      icon: Icon(Icons.search),
-                      hintText: 'What would your like to buy?',
-                      border: InputBorder.none),
-                  keyboardType: TextInputType.text,
-                ),
+              child: TextField(
+                decoration: InputDecoration(
+                    icon: Icon(Icons.search),
+                    hintText: 'What would your like to buy?',
+                    border: InputBorder.none),
+                keyboardType: TextInputType.text,
               ),
             ),
             Padding(
@@ -89,292 +89,106 @@ class _MyWidgetState extends State<HomeScreen>
               child: Image.network(
                 "https://images.moneycontrol.com/static-mcnews/2019/09/Xiaomi_Diwali_Sale-770x433.jpg",
                 fit: BoxFit.fill,
-                width: 380,
-                height: 150,
+                width: 380.w,
+                height: 150.h,
                 alignment: Alignment.bottomCenter,
               ),
             ),
-            const SizedBox(
-              height: 5,
+             SizedBox(
+              height: 5.h,
+            ),
+            Container(
+              color: Colors.white,
+              child: Row(children: [
+                Icns(
+                    icn: Icons.home_outlined, name: 'Popular', clr: Colors.red),
+                Icns(
+                  icn: Icons.access_time_outlined,
+                  name: 'Flash Sell',
+                  clr: Color.fromARGB(255, 114, 105, 27),
+                ),
+                Icns(
+                  icn: Icons.fire_truck,
+                  name: 'Evaly Store',
+                  clr: Color.fromARGB(255, 17, 86, 55),
+                ),
+                Icns(
+                    icn: Icons.wallet_giftcard,
+                    name: 'Voucher',
+                    clr: Color.fromARGB(143, 20, 78, 68)),
+              ]),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            Container(
+              color: Colors.white,
+              child: TabBar(
+                indicatorColor: Colors.blue,
+                labelColor: Colors.black,
+                tabs: const [
+                  Tab(
+                    text: 'Categories',
+                  ),
+                  Tab(
+                    text: 'Brands',
+                  ),
+                  Tab(
+                    text: 'Shops',
+                  )
+                ],
+                controller: _tb,
+              ),
+            ),
+            SizedBox(
+              height: 10.h,
             ),
             Column(
               children: [
-                Container(
-                  color: Colors.white,
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(14),
-                        child: Column(
-                          children: const [
-                            CircleAvatar(
-                                backgroundColor:
-                                    Color.fromARGB(255, 240, 233, 238),
-                                radius: 30,
-                                child: Icon(
-                                  Icons.home_outlined,
-                                  color: Colors.pink,
-                                  size: 27,
-                                )),
-                            Text(
-                              'Popular',
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.grey,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 25, right: 19),
-                        child: Column(
-                          children: const [
-                            CircleAvatar(
-                                backgroundColor:
-                                    Color.fromARGB(255, 240, 233, 238),
-                                radius: 30,
-                                child: Icon(
-                                  Icons.access_time_outlined,
-                                  color: Color.fromARGB(255, 144, 144, 38),
-                                  size: 29,
-                                )),
-                            Text(
-                              'Flash Sell',
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.grey,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 29, right: 39),
-                        child: Column(
-                          children: const [
-                            CircleAvatar(
-                                backgroundColor:
-                                    Color.fromARGB(255, 240, 233, 238),
-                                radius: 30,
-                                child: Icon(
-                                  Icons.fire_truck,
-                                  color: Color.fromARGB(255, 21, 149, 87),
-                                  size: 33,
-                                )),
-                            Text(
-                              'Evaly Store',
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.grey,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Column(
-                        children: const [
-                          CircleAvatar(
-                              backgroundColor:
-                                  Color.fromARGB(255, 240, 233, 238),
-                              radius: 30,
-                              child: Icon(
-                                Icons.wallet_giftcard,
-                                color: Color.fromARGB(255, 14, 98, 85),
-                                size: 27,
-                              )),
-                          Text(
-                            'Voucher',
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: Colors.grey,
-                            ),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  color: Colors.white,
-                  child: TabBar(
-                    indicatorColor: Colors.blue,
-                    labelColor: Colors.black,
-                    tabs: const [
-                      Tab(
-                        text: 'Categories',
-                      ),
-                      Tab(
-                        text: 'Brands',
-                      ),
-                      Tab(
-                        text: 'Shops',
-                      )
-                    ],
-                    controller: _tb,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
+                Row(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => luggage_details(),
+                            ));
+                      },
+                      child: BagLuggage(
+                          img:
+                              'https://m.media-amazon.com/images/I/81oUvlsYcnL._SL1500_.jpg',
+                          name: 'Bags&Luggage'),
+                    ),
+                    BagLuggage(
+                        img:
+                            'https://www.mustafasultan.com/uploads/cms/1570001320-818736.png',
+                        name: 'Electonis&Accessories'),
+                    BagLuggage(
+                        img:
+                            'https://www.thebodycare.co.in/wp-content/uploads/2018/12/Hand-Body-lotion-compressed1.jpg',
+                        name: 'Beauty&Bodycare'),
+                  ],
                 ),
                 Row(
                   children: [
-                    Column(
-                      children: [
-                        GestureDetector(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => luggage_details(),
-                              )),
-                          child: Container(
-                            height: 150,
-                            width: 130,
-                            color: Colors.white,
-                            child: Column(
-                              children: [
-                                Image.network(
-                                  'https://m.media-amazon.com/images/I/81oUvlsYcnL._SL1500_.jpg',
-                                  height: 120,
-                                  width: 90,
-                                ),
-                                const Text(
-                                  'Bags&Luggage',
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Container(
-                          height: 150,
-                          width: 130,
-                          color: Colors.white,
-                          child: Column(
-                            children: [
-                              Image.network(
-                                'https://www.mustafasultan.com/uploads/cms/1570001320-818736.png',
-                                height: 120,
-                                width: 95,
-                              ),
-                              Text(
-                                'Electonis&Accessories',
-                                style: TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.bold),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
+                    BagLuggage(
+                        img:
+                            'https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/11391306/2020/2/12/10b9eea6-35be-4b7d-8c39-826d4d3500c11581485549564-US-Polo-Assn-Men-Casual-Shoes-4671581485548936-1.jpg',
+                        name: 'Shoes&Chappals'),
+                    BagLuggage(
+                      img:
+                          'https://imageio.forbes.com/specials-images/imageserve/5f85be4ed0acaafe77436710/0x0.jpg?format=jpg&width=1200',
+                      name: 'Books&Stationery',
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          height: 150,
-                          width: 130,
-                          color: Colors.white,
-                          child: Column(
-                            children: [
-                              Image.network(
-                                'https://www.thebodycare.co.in/wp-content/uploads/2018/12/Hand-Body-lotion-compressed1.jpg',
-                                height: 120,
-                                width: 175,
-                              ),
-                              Text(
-                                'Beauty&Bodycare',
-                                style: TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Container(
-                          height: 150,
-                          width: 130,
-                          color: Colors.white,
-                          child: Column(
-                            children: [
-                              Image.network(
-                                'https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/11391306/2020/2/12/10b9eea6-35be-4b7d-8c39-826d4d3500c11581485549564-US-Polo-Assn-Men-Casual-Shoes-4671581485548936-1.jpg',
-                                height: 120,
-                                width: 95,
-                              ),
-                              Text(
-                                'Shoes&Chappals',
-                                style: TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.bold),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          height: 150,
-                          width: 130,
-                          color: Colors.white,
-                          child: Column(
-                            children: [
-                              Image.network(
-                                'https://imageio.forbes.com/specials-images/imageserve/5f85be4ed0acaafe77436710/0x0.jpg?format=jpg&width=1200',
-                                height: 120,
-                                width: 95,
-                              ),
-                              Text(
-                                'Books&Stationery',
-                                style: TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Container(
-                          height: 150,
-                          width: 130,
-                          color: Colors.white,
-                          child: Column(
-                            children: [
-                              Image.network(
-                                'https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/Search/224x336/770756.jpg',
-                                height: 120,
-                                width: 95,
-                              ),
-                              Text(
-                                'Shirt&T-shirts',
-                                style: TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.bold),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    BagLuggage(
+                        img:
+                            'https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/Search/224x336/770756.jpg',
+                        name: 'Shirt&T-shirts'),
                   ],
-                ),
+                )
               ],
-            ),
+            )
           ],
         ),
       ),

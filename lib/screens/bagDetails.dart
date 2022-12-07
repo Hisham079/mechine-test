@@ -3,6 +3,7 @@ import 'package:evily1/screens/bag&Luggage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widget/bagDetails.dart';
 
@@ -40,14 +41,14 @@ class _Product_screenState extends State<Product_screen> {
                 style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.w800,
-                    fontSize: 29),
+                    fontSize: 29.sp),
               ),
               Text(
                 'valy',
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w800,
-                    fontSize: 29),
+                    fontSize: 29.sp),
               ),
             ],
           ),
@@ -56,15 +57,15 @@ class _Product_screenState extends State<Product_screen> {
           Icon(
             color: Colors.black,
             Icons.person_outline,
-            size: 34,
+            size: 34.sp,
           )
         ],
       ),
       body: Column(
         children: [
           Container(
-            height: 400,
-            width: 360,
+            height: 400.h,
+            width: 360.w,
             child: Image.network(
               "https://m.media-amazon.com/images/I/81oUvlsYcnL._SL1500_.jpg",
               fit: BoxFit.fill,
@@ -94,39 +95,39 @@ class _Product_screenState extends State<Product_screen> {
               padding: const EdgeInsets.only(left: 12),
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(7),
+                  borderRadius: BorderRadius.circular(7.r),
                   color: Color.fromARGB(255, 236, 192, 203),
                 ),
-                height: 40,
-                width: 348,
+                height: 40.h,
+                width: 307.w,
                 child: Row(
                   children: [
                     Container(
-                     // color: Color.fromARGB(255, 236, 192, 203),
+                      // color: Color.fromARGB(255, 236, 192, 203),
                       // decoration: BoxDecoration(
                       //   borderRadius: BorderRadius.circular(16),
                       //   color: Color.fromARGB(255, 236, 192, 203),
                       // ),
-                      height: 60,
+                      height: 60.h,
                       child: Padding(
                         padding: const EdgeInsets.only(top: 9),
                         child: Text(
                           '   ADD TO CART   ',
                           style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 15.9.sp,
                               fontWeight: FontWeight.bold,
                               color: Color.fromARGB(255, 241, 76, 65)),
                         ),
                       ),
                     ),
                     Container(
-                      height: 60,
+                      height: 60.h,
                       color: Colors.red,
                       child: Padding(
                         padding: const EdgeInsets.only(top: 9),
                         child: Text('   AVAILABLE AT SHOPS  ',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 15.9.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white)),
                       ),
